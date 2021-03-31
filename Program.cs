@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-//void Csere (ref char q) => q = '#';
+
+//These 2 are just for seeing the syntax.
 Func<char,char> CserFunc = (char v) => v ='#';
 Action<char> Valami = sz => sz = '&';
+
+Func<Task<string>> AFunc = async () =>
+{
+    using var client = new HttpClient();
+    return await client.GetStringAsync("https://raw.githubusercontent.com/CsharptutorialHungary/stepintonet5/main/Peldak/NullableRef/NullableRef.csproj");
+};
 
 async Task<string> GettingStuff(){
     using var client = new HttpClient();
     return await client.GetStringAsync("https://raw.githubusercontent.com/CsharptutorialHungary/stepintonet5/main/Peldak/PatternMatch/PatternMatch.csproj");
 };
 
-char a = 'c';   
-
+char a = 'c';
 unsafe
 {
     char* b = &a;
@@ -19,10 +25,7 @@ unsafe
     if (*b == '#')
         System.Console.WriteLine(*b);
     else{
-        //Csere(ref a);
-        Valami(a);
-        System.Console.WriteLine($"az a: {a}");
-     a = CserFunc(a);
+        Trystuff(ref a, a => System.Console.WriteLine($"A a: {a}"), '#');
         goto Here;
     }
 }
@@ -40,15 +43,13 @@ return await client.GetStringAsync("https://raw.githubusercontent.com/Csharptuto
 
  System.Console.WriteLine(hg);
 
- Func<Task<string>> AFunc = async () => 
-{using var client = new HttpClient();
-return await client.GetStringAsync("https://raw.githubusercontent.com/CsharptutorialHungary/stepintonet5/main/Peldak/NullableRef/NullableRef.csproj");
- };
+var res = await AFunc();
+System.Console.WriteLine(res);
 
- var res = await AFunc();
- System.Console.WriteLine(res);
-
-
+void Trystuff<T>(ref T betu, Action<T> act, T masik){
+    betu = masik;
+    act(betu);
+};
 
 
 /*
