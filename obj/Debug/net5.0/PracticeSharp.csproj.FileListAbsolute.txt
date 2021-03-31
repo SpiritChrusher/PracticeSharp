@@ -1,0 +1,16 @@
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.exe
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.deps.json
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.runtimeconfig.json
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.runtimeconfig.dev.json
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.dll
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\ref\PracticeSharp.dll
+C:\Users\dulsz\source\repos\PracticeSharp\bin\Debug\net5.0\PracticeSharp.pdb
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.csprojAssemblyReference.cache
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.AssemblyInfoInputs.cache
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.AssemblyInfo.cs
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.csproj.CoreCompileInputs.cache
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.dll
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\ref\PracticeSharp.dll
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.pdb
+C:\Users\dulsz\source\repos\PracticeSharp\obj\Debug\net5.0\PracticeSharp.genruntimeconfig.cache
