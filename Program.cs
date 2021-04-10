@@ -53,7 +53,40 @@ return await client.GetStringAsync("https://raw.githubusercontent.com/Csharptuto
 var res = await AFunc();
 System.Console.WriteLine(res);
 
+Statikus.b = 10;
+Statikus.a = 23;
+Console.WriteLine(Statikus.adding());
 
+var n = new Normal(4, 3);
+Console.WriteLine(n.iseven());
+
+class Normal
+{
+    public int a { get; set; }
+    public int b { get; set; }
+
+    public Normal(int a, int b)
+    {
+        this.a = a;
+        this.b = b;
+    }
+    
+    public bool iseven()
+    {
+        return a == b;
+    }
+}
+
+static class Statikus
+{
+    public static int a;
+    public static int b;
+
+    public static int adding()
+    {
+        return a + b;
+    }
+}
 
 /*
 var array = new byte[100];
