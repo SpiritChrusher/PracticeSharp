@@ -27,12 +27,26 @@ void Trystuff<T>(ref T betu, Action<T> act, T masik){
 char a = 'c';
 unsafe
 {
+static void Cserelj2 <T>(ref T a, T b, Action<T> act)
+{ a = b;
+     act(a);
+     };
+
+delegate* <ref char, char, Action<char>, void> funcpointer2 = &Cserelj2;
+
+delegate* <ref int, int, Action<int>, void> funcintpointer = &Cserelj2;
+int azta = 10;
+static void Cserelj (ref char a, char b) =>  a = b;
+delegate* <ref char, char, void> funcpointer = &Cserelj;
+
     char* b = &a;
     Here:
     if (*b == '#')
         System.Console.WriteLine(*b);
     else{
-        Trystuff(ref a, a => System.Console.WriteLine($"A a: {a}"), '#');
+       funcpointer2(ref a,'#', a => System.Console.WriteLine($"A a: {a}"));
+       funcintpointer(ref azta, 30, azta => System.Console.WriteLine($"szam: {azta}"));
+    // funcpointer(ref a, '#');
         goto Here;
     }
 }
