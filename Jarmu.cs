@@ -53,7 +53,9 @@ namespace PracticeSharp
 
           //  System.Console.WriteLine(result.where);
             
-           (int, int, int) tuple = (0,0,0);
+           (int B, int K, int M, int stb) tuple = (0,0,0,0);
+
+
 
 
             foreach (var item in l)
@@ -61,18 +63,21 @@ namespace PracticeSharp
                 switch (item.plate[0])
                 {
                 case 'B':
-                    tuple.Item1++;
+                    tuple.B++;
                     break;
                 case 'K':
-                    tuple.Item2++;
+                    tuple.K++;
                     break;
                 case 'M':
-                    tuple.Item3++;
+                    tuple.M++;
+                    break;
+                 default:
+                    tuple.stb++;
                     break;
                 }
             }
 
-            System.Console.WriteLine($"B:{tuple.Item1}; K:{tuple.Item2}; M:{tuple.Item3}");
+            System.Console.WriteLine($"B:{tuple.Item1}; K:{tuple.Item2}; M:{tuple.Item3} {nameof(tuple.stb)}: {tuple.stb}");
         }
 
         public static void Longestnothing(List<Jarmu> l)

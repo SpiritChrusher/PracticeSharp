@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using PracticeSharp;
 
 
 Func<Task<string>> AFunc = async () =>
@@ -19,43 +21,15 @@ async Task<string> GettingStuff(){
 Func<char,char> CserFunc = (char v) => v ='#';
 Action<char> Valami = sz => sz = '&';
 
-void Trystuff<T>(ref T betu, Action<T> act, T masik){
-    betu = masik;
-    act(betu);
-};
-
-char a = 'c';
-unsafe
-{
-static void Cserelj2 <T>(ref T a, T b, Action<T> act)
-{ a = b;
-     act(a);
-     };
-
-delegate* <ref char, char, Action<char>, void> funcpointer2 = &Cserelj2;
-
-delegate* <ref int, int, Action<int>, void> funcintpointer = &Cserelj2;
-int azta = 10;
-static void Cserelj (ref char a, char b) =>  a = b;
-delegate* <ref char, char, void> funcpointer = &Cserelj;
-
-    char* b = &a;
-    Here:
-    if (*b == '#')
-        System.Console.WriteLine(*b);
-    else{
-       funcpointer2(ref a,'#', a => System.Console.WriteLine($"A a: {a}"));
-       funcintpointer(ref azta, 30, azta => System.Console.WriteLine($"szam: {azta}"));
-    // funcpointer(ref a, '#');
-        goto Here;
-    }
-}
-char wq = a;
-System.Console.WriteLine(wq);
+Biztonsagtalan.DoUnsafeThings();
 
 string szoveg = await GettingStuff();
 System.Console.WriteLine(szoveg);
 
+
+# if DEBUG
+System.Console.WriteLine("Test");
+#endif
 
 var hg = await Task<string>.Run(async () => 
 {using var client = new HttpClient();
@@ -73,6 +47,13 @@ Console.WriteLine(Statikus.adding());
 
 var n = new Normal(4, 3);
 Console.WriteLine(n.iseven());
+
+Console.WriteLine("Hello World!");
+List<Jarmu> Vehicles = Jarmu.Readin("jarmu.txt");
+Jarmu.HowManyHours(Vehicles);
+Jarmu.FirstCars(Vehicles);
+Jarmu.BKM(Vehicles);
+Jarmu.FindVehicle(Vehicles);
 
 class Normal
 {
@@ -159,12 +140,6 @@ using System.Collections.Generic;
 using PracticeSharp;
 using System.Linq;
 
-Console.WriteLine("Hello World!");
-List<Jarmu> Vehicles = Jarmu.Readin("jarmu.txt");
-Jarmu.HowManyHours(Vehicles);
-Jarmu.FirstCars(Vehicles);
-Jarmu.BKM(Vehicles);
-Jarmu.FindVehicle(Vehicles);
 
 
 List<int> intList = new List<int>();
