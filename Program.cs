@@ -53,7 +53,9 @@ List<Jarmu> Vehicles = Jarmu.Readin("jarmu.txt");
 Jarmu.HowManyHours(Vehicles);
 Jarmu.FirstCars(Vehicles);
 Jarmu.BKM(Vehicles);
+Jarmu.Longestnothing(Vehicles);
 Jarmu.FindVehicle(Vehicles);
+Jarmu.WriteToFile(Vehicles);
 
 class Normal
 {

@@ -77,19 +77,57 @@ namespace PracticeSharp
                 }
             }
 
-            System.Console.WriteLine($"B:{tuple.Item1}; K:{tuple.Item2}; M:{tuple.Item3} {nameof(tuple.stb)}: {tuple.stb}");
-        }
-
-        public static void Longestnothing(List<Jarmu> l)
-        {
-            int longest = 0;
-            System.Console.WriteLine($"{longest} majd ha eszembe jut valami nem basic megoldás");
+            System.Console.WriteLine($"B:{tuple.Item1}; K:{tuple.Item2}; M:{tuple.Item3}" +
+                $" {nameof(tuple.stb)}: {tuple.stb}");
         }
 
         public static void FindVehicle(List<Jarmu> l)
         {
             string pattern = Converter.TexttoPattern();
             l.Where(x=> Regex.IsMatch(x.plate, pattern)).ToList().ForEach(x => Console.WriteLine(x.plate));
+        }
+
+        public static void Longestnothing(List<Jarmu> list)
+        {
+            int longest = 0;
+            var max = "";
+            for (int i = 1; i < list.Count; i++)
+            {
+                var i1 = (list[i-1].hour * 3600) + (list[i-1].min * 60) + list[i-1].sec;
+
+                var i2 = (list[i].hour * 3600) + (list[i].min * 60) + list[i].sec;
+
+                var i3 = i2 - i1;
+
+                if (longest < i3)
+                {
+                    longest = i3;
+                    max = $"{list[i-1]} - {list[i]}";
+                }
+            }
+            Console.WriteLine(max);         
+        }
+
+        public static void WriteToFile(List<Jarmu> list)
+        {
+            int ido = 300;
+            using StreamWriter file = new("vizsgalt.txt");
+            file.WriteLine(list[0]);
+            for (int i = 1; i < list.Count; i++)
+            {
+                var i2 = (list[i].hour * 3600) + (list[i].min * 60) + list[i].sec;
+
+                var i1 = (list[i - 1].hour * 3600) + (list[i - 1].min * 60) + list[i - 1].sec;
+
+                var i3 = i2 - i1;
+                ido -= i3;
+                if (ido <= 0)
+                {
+                    file.WriteLine(list[i]);
+                    ido = 300;
+                }
+
+            }
         }
     }
 
